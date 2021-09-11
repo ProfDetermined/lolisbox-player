@@ -18,7 +18,7 @@
 <body>
     <?php
         if (substr($link, -3) == "wav") {
-            echo "<audio controls id='playr'>";
+            echo "<audio controls autoplay>";
             echo "<source src = '" . $link . "' type='audio/wav'>";
             echo "</audio>";
         }
