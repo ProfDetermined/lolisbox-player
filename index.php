@@ -29,7 +29,7 @@
         $call = json_decode($api, true);
 
         echo "<h3>";
-        echo $call['fileMeta']['name'];
+        echo $call['globalMeta']['originFilename'];
         echo "</h3>";
     ?>   
 </body>
