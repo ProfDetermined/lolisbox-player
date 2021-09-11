@@ -34,8 +34,9 @@
     ?>   
 
     <div class="fixed_ft">
-        
+
     </div>
+    <script src="js/play.js"></script>
 </body>
 
 </html>
