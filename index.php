@@ -1,5 +1,7 @@
 <?php
-    $link = $_GET['link'];
+    $home = "https://box.lolis.love/0/";
+    $id = $_GET['id'];
+    $link = $home.$id;
 ?>
 
 <!DOCTYPE html>
