@@ -11,6 +11,10 @@ html, body {
     padding: 10px;
 }
 
+.nav-i {
+    display: inline;
+}
+
 .hidden {
     display: none;
 }

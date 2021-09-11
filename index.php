@@ -26,29 +26,39 @@ $link = $home . $id;
     ?>
 
     <div class="fixed_ft">
-        <p class="song-name">
-            <?php
-                $meta = "/meta";
-                $a = $link . $meta;
-                $api = file_get_contents($a);
-                $call = json_decode($api, true);
+        <ul class="nav">
+            <li class="detailed nav-i">
+                <a class="song-name">
+                    <?php
+                    $meta = "/meta";
+                    $a = $link . $meta;
+                    $api = file_get_contents($a);
+                    $call = json_decode($api, true);
 
-                echo $call['globalMeta']['originFilename'];
-            ?>
-        </p>
+                    echo $call['globalMeta']['originFilename'];
+                    ?>
+                </a>
+                <br>
+                <a class="song-name">
+                    Thx to <a href="https://Lolis.love">Lolis.love</a>
+                </a>
+            </li>
 
-        <button id="back">
-            <img src="content/svg/back.svg" alt="back">
-        </button>
-        <button id="play" onclick="play()">
-            <img src="content/svg/play.svg" alt="back" onclick="play()">
-        </button>
-        <button id="pause" onclick="pause()">
-            <img src="content/svg/pause.svg" alt="back" onclick="pause()">
-        </button>
-        <button id="next">
-            <img src="content/svg/next.svg" alt="back">
-        </button>
+            <li class="button nav-i">
+                <button id="back">
+                    <img src="content/svg/back.svg" alt="back">
+                </button>
+                <button id="play" onclick="play()">
+                    <img src="content/svg/play.svg" alt="back" onclick="play()">
+                </button>
+                <button id="pause" onclick="pause()">
+                    <img src="content/svg/pause.svg" alt="back" onclick="pause()">
+                </button>
+                <button id="next">
+                    <img src="content/svg/next.svg" alt="back">
+                </button>
+            </li>
+        </ul>
     </div>
     <script src="./content/js/play.js"></script>
 </body>
