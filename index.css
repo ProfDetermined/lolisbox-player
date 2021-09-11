@@ -2,3 +2,15 @@
     position: fixed;
     bottom: 0;
 }
+
+.hidden {
+    display: none;
+}
+
+.fixed_ft button {
+    background-color: black;
+}
+
+.fixed_ft button:hover {
+    background-color: #494949;
+}

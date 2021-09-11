@@ -1,7 +1,7 @@
 <?php
-    $home = "https://box.lolis.love/0/";
-    $id = $_GET['id'];
-    $link = $home.$id;
+$home = "https://box.lolis.love/0/";
+$id = $_GET['id'];
+$link = $home . $id;
 ?>
 
 <!DOCTYPE html>
@@ -17,24 +17,36 @@
 
 <body>
     <?php
-        if (substr($link, -3) == "wav") {
-            echo "<audio controls autoplay>";
-            echo "<source src = '" . $link . "' type='audio/wav'>";
-            echo "</audio>";
-        }
+    if (substr($link, -3) == "wav") {
+        echo "<audio controls autoplay>";
+        echo "<source src = '" . $link . "' type='audio/wav'>";
+        echo "</audio>";
+    }
 
-        $meta = "/meta";
-        $a = $link.$meta;
-        $api = file_get_contents($a);
-        $call = json_decode($api, true);
+    $meta = "/meta";
+    $a = $link . $meta;
+    $api = file_get_contents($a);
+    $call = json_decode($api, true);
 
-        echo "<h3>";
-        echo $call['globalMeta']['originFilename'];
-        echo "</h3>";
-    ?>   
+    echo "<h3>";
+    echo $call['globalMeta']['originFilename'];
+    echo "</h3>";
+    ?>
 
     <div class="fixed_ft">
+        <button id="back">
+            <img src="./content/back.svg" alt="back">
+        </button>
+        <button id="play">
+            <img src="./content/back.svg" alt="back">
+        </button>
+        <button id="pause" class="hidden">
+            <img src="./content/back.svg" alt="back">
+        </button>
+        <button id="next">
+            <img src="./content/back.svg" alt="back">
 
+        </button>
     </div>
     <script src="js/play.js"></script>
 </body>
