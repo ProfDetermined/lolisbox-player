@@ -29,9 +29,7 @@
             echo $call;
             echo "</h1>";
         }
-    ?>
-
-    
+    ?>   
 </body>
 
 </html>
