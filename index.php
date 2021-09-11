@@ -18,7 +18,7 @@ $link = $home . $id;
 <body>
     <?php
     if (substr($link, -3) == "wav") {
-        echo "<audio controls >";
+        echo "<audio controls id='mplay'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
@@ -38,10 +38,10 @@ $link = $home . $id;
         <button id="back">
             <img src="content/svg/back.svg" alt="back">
         </button>
-        <button id="play">
+        <button id="play" onclick="play()">
             <img src="content/svg/play.svg" alt="back">
         </button>
-        <button id="pause" class="hidden">
+        <button id="pause" class="hidden" onclick="pause()">
             <img src="content/svg/pause.svg" alt="back">
         </button>
         <button id="next">
