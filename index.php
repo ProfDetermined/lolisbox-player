@@ -32,6 +32,10 @@
         echo $call['globalMeta']['originFilename'];
         echo "</h3>";
     ?>   
+
+    <div class="fixed_ft">
+        
+    </div>
 </body>
 
 </html>
