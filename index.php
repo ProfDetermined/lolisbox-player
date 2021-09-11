@@ -23,14 +23,14 @@
             echo "</audio>";
         }
 
-        if ($link == "https://box.lolis.love/*") {
-            $api = $link + 'meta';
-            $call = json_decode($api,true);
+        $meta = "/meta";
+        $a = $link.$meta;
+        $api = file_get_contents($a);
+        $call = json_decode($api, true);
 
-            echo "<h1>";
-            echo $call;
-            echo "</h1>";
-        }
+        echo "<h3>";
+        echo $call['fileMeta']['name'];
+        echo "</h3>";
     ?>   
 </body>
 
