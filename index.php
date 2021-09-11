@@ -41,12 +41,11 @@ $link = $home . $id;
         <button id="play">
             <img src="content/svg/play.svg" alt="back">
         </button>
-        <button id="pause" class="">
+        <button id="pause" class="hidden">
             <img src="content/svg/pause.svg" alt="back">
         </button>
         <button id="next">
             <img src="content/svg/next.svg" alt="back">
-
         </button>
     </div>
     <script src="js/play.js"></script>
