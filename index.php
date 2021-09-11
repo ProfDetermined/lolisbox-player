@@ -39,16 +39,16 @@ $link = $home . $id;
             <img src="content/svg/back.svg" alt="back">
         </button>
         <button id="play" onclick="play()">
-            <img src="content/svg/play.svg" alt="back">
+            <img src="content/svg/play.svg" alt="back" onclick="play()">
         </button>
         <button id="pause" class="hidden" onclick="pause()">
-            <img src="content/svg/pause.svg" alt="back">
+            <img src="content/svg/pause.svg" alt="back" onclick="pause()">
         </button>
         <button id="next">
             <img src="content/svg/next.svg" alt="back">
         </button>
     </div>
-    <script src="js/play.js"></script>
+    <script src="./content/js/play.js"></script>
 </body>
 
 </html>
