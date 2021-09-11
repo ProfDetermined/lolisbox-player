@@ -38,10 +38,10 @@ $link = $home . $id;
         <button id="back">
             <img src="content/svg/back.svg" alt="back">
         </button>
-        <button id="play" onclick="play()">
+        <button id="play" class="hidden" onclick="play()">
             <img src="content/svg/play.svg" alt="back" onclick="play()">
         </button>
-        <button id="pause" class="hidden" onclick="pause()">
+        <button id="pause" onclick="pause()">
             <img src="content/svg/pause.svg" alt="back" onclick="pause()">
         </button>
         <button id="next">
