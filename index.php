@@ -1,7 +1,5 @@
 <?php
-
     $link = $_GET['link'];
-
 ?>
 
 <!DOCTYPE html>
