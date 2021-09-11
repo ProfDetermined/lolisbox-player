@@ -23,18 +23,20 @@ $link = $home . $id;
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
     }
-
-    $meta = "/meta";
-    $a = $link . $meta;
-    $api = file_get_contents($a);
-    $call = json_decode($api, true);
-
-    echo "<h3>";
-    echo $call['globalMeta']['originFilename'];
-    echo "</h3>";
     ?>
 
     <div class="fixed_ft">
+        <p class="song-name">
+            <?php
+                $meta = "/meta";
+                $a = $link . $meta;
+                $api = file_get_contents($a);
+                $call = json_decode($api, true);
+
+                echo $call['globalMeta']['originFilename'];
+            ?>
+        </p>
+
         <button id="back">
             <img src="content/svg/back.svg" alt="back">
         </button>
