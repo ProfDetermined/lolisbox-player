@@ -4,6 +4,8 @@ const pab = document.getElementById("pause");
 const nxt = document.getElementById("next");
 const prv = document.getElementById("back");
 
+const dur = document.getElementById("dur");
+
 function play() {
     pl.play();
     plb.classList.add("hidden");
@@ -15,3 +17,7 @@ function pause() {
     plb.classList.remove("hidden");
     pab.classList.add("hidden");
 }
+
+pl.addEventListener("playing", play);
+pl.addEventListener("pause", pause);
+
