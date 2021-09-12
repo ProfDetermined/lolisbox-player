@@ -1,16 +1,30 @@
 [
     {
-        "id": "0",
+        "id": "1",
         "song": "Sympatia Love",
         "artist": "katsuragi.wav",
         "album": "Colorful Illusion",
         "link_id": "pmb4i.wav"
     },
     {
-        "id": "1",
+        "id": "2",
         "song": "Grey Street",
         "artist": "katsuragi.wav",
         "album":"Colorful Illusion",
         "link_id": "n2603.wav"
+    },
+    {
+        "id": "3",
+        "song": "Paradise's",
+        "artist": "katsuragi.wav",
+        "album": "Colorful Illusion",
+        "link_id": " "
+    },
+    {
+        "id": "4",
+        "song": "Daydreaming",
+        "artist": "katsuragi.wav",
+        "album": "Colorful Illusion",
+        "link_id": " "
     }
 ]
