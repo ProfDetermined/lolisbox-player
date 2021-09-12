@@ -19,16 +19,16 @@ $link = $home . $id;
 <body>
     <?php
     if (substr($link, -3) == "wav") {
-        echo "<audio controls id='mplay'>";
+        echo "<audio controls autoplay id='mplay'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
     }
     ?>
 
-    <div class="container fixed_ft">
-        <div class="row">
-            <div class="col detailed">
+    <div class="container-fluid fixed_ft">
+        <div class="row" style="top: 50%;">
+            <div class="col-2 detailed">
                 <a class="song-name">
                     <?php
                     $meta = "/meta";
@@ -40,11 +40,11 @@ $link = $home . $id;
                     ?>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <button id="back">
                     <img src="content/svg/back.svg" alt="back">
                 </button>
-                <button id="play" onclick="play()">
+                <button id="play" class="hidden" onclick="play()">
                     <img src="content/svg/play.svg" alt="back" onclick="play()">
                 </button>
                 <button id="pause" onclick="pause()">
