@@ -3,7 +3,13 @@ $home = "https://box.lolis.love/0/";
 $id = $_GET['id'];
 $link = $home . $id;
 
-$local = file_get_contents('/content/db/song.json');
+$meta = "/meta";
+$a = $link . $meta;
+$api = file_get_contents($a);
+$call = json_decode($api, true);
+
+$local = file_get_contents('./content/db/song.json');
+$lode = json_decode($local);
 ?>
 
 <!DOCTYPE html>
@@ -21,46 +27,31 @@ $local = file_get_contents('/content/db/song.json');
 <body>
 
     <div class="music">
-        <ul>
-            <li>
-                Colorful Illusion
-                <ul>
-                    <li>
-                        <a href="/?id=pmb4i.wav">
-                            01 Sympatia Love
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/?id=n2603.wav">
-                            02 Grey Street
-                        </a>
-                    </li>
-                    <li>
-                        <i>
-                            03 Paradise
-                        </i>
-
-                        <!-- <a href="?id=#" disabled>
-                            03 Paradise
-                        </a> -->
-                    </li>
-                    <li>
-                        <i>
-                            04 DayDreaming
-                        </i>
-
-                        <!-- <a href="?id=#" disabled>
-                            04 DayDreaming
-                        </a> -->
-                    </li>
-                </ul>
-            </li>
+        <ul style="list-style-type: none;">
+            <?php
+            foreach ($lode as $lode) {
+                echo "<li>";
+                if ($lode->link_id == " ") {
+                    echo "<button type='button' class='btn btn-secondary'>";
+                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
+                    echo "</button>";
+                } else {
+                    echo "<a href='/?id=" . $lode->link_id . "'>";
+                    echo "<button type='button' class='btn btn-success'>";
+                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
+                    echo "</button>";
+                    echo "</a>";
+                }
+                echo "</li>";
+                echo "<br>";
+            }
+            ?>
         </ul>
     </div>
 
     <?php
     if (substr($link, -3) == "wav") {
-        echo "<audio controls autoplay id='mplay' class='hidden'>";
+        echo "<audio controls id='mplay' class='hidden'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
@@ -71,11 +62,6 @@ $local = file_get_contents('/content/db/song.json');
             <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
                 <a class="song-name" style="text-align: center;">
                     <?php
-                    $meta = "/meta";
-                    $a = $link . $meta;
-                    $api = file_get_contents($a);
-                    $call = json_decode($api, true);
-
                     echo $call['globalMeta']['originFilename'];
                     ?>
                 </a>
