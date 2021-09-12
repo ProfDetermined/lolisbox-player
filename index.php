@@ -18,6 +18,43 @@ $link = $home . $id;
 
 <body>
 
+    <div style="padding: 1rem;">
+        <ul>
+            <li>
+                Colorful Illusion
+                <ul>
+                    <li>
+                        <a href="/?id=pmb4i.wav">
+                            01 Sympatia Love
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/?id=n2603.wav">
+                            02 Grey Street
+                        </a>
+                    </li>
+                    <li>
+                        <i>
+                            03 Paradise
+                        </i>
+
+                        <!-- <a href="?id=#" disabled>
+                            03 Paradise
+                        </a> -->
+                    </li>
+                    <li>
+                        <i>
+                            04 DayDreaming
+                        </i>
+                        
+                        <!-- <a href="?id=#" disabled>
+                            04 DayDreaming
+                        </a> -->
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
     <?php
     if (substr($link, -3) == "wav") {
