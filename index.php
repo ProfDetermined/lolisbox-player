@@ -40,22 +40,25 @@ $link = $home . $id;
                     ?>
                 </a>
             </div>
-            <div class="col-2">
-                <button id="back">
+            <div class="col-2" style="text-align: center;">
+                <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
                 </button>
-                <button id="play" class="hidden" onclick="play()">
+                <button id="play" class="" onclick="play()">
                     <img src="content/svg/play.svg" alt="back" onclick="play()">
                 </button>
                 <button id="pause" class="hidden" onclick="pause()">
                     <img src="content/svg/pause.svg" alt="back" onclick="pause()">
                 </button>
-                <button id="next">
+                <button id="next" onclick="next()">
                     <img src="content/svg/next.svg" alt="back">
                 </button>
             </div>
+            <div class="col dur-h">
+                <progress id="dur" value="0" max="100"></progress>
+            </div>
             <div class="col">
-                <progress id="dur" max=100></progress>
+
             </div>
         </div>
     </div>
