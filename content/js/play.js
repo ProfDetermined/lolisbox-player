@@ -34,8 +34,3 @@ pl.ontimeupdate = function () {
     var percentage = (pl.currentTime / pl.duration) * 100;
     dur.value = percentage
 };
-
-pl.ontimeupdate = function () {
-    var volume = pl.volume * 10;
-    vol.value = volume;
-}
