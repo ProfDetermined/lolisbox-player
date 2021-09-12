@@ -28,3 +28,8 @@ function back() {
 function next() {
     pl.currentTime = pl.currentTime + 5;
 }
+
+pl.ontimeupdate = function () {
+    var percentage = (pl.currentTime / pl.duration) * 100;
+    dur.value = percentage
+};
