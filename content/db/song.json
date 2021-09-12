@@ -1,8 +1,16 @@
 [
     {
-        "id": "01",
+        "id": "0",
         "song": "Sympatia Love",
         "artist": "katsuragi.wav",
+        "album": "Colorful Illusion",
         "link_id": "pmb4i.wav"
+    },
+    {
+        "id": "1",
+        "song": "Grey Street",
+        "artist": "katsuragi.wav",
+        "album":"Colorful Illusion",
+        "link_id": "n2603.wav"
     }
 ]
