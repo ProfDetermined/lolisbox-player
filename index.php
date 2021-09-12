@@ -2,6 +2,8 @@
 $home = "https://box.lolis.love/0/";
 $id = $_GET['id'];
 $link = $home . $id;
+
+$local = file_get_contents('/content/db/song.json');
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ $link = $home . $id;
 
 <body>
 
-    <div style="padding: 1rem;">
+    <div class="music">
         <ul>
             <li>
                 Colorful Illusion
@@ -46,7 +48,7 @@ $link = $home . $id;
                         <i>
                             04 DayDreaming
                         </i>
-                        
+
                         <!-- <a href="?id=#" disabled>
                             04 DayDreaming
                         </a> -->
