@@ -13,6 +13,7 @@ $link = $home . $id;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastPlayer5 | Detzz</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -26,41 +27,43 @@ $link = $home . $id;
     ?>
 
     <div class="fixed_ft">
-        <ul class="nav">
-            <li class="detailed nav-i">
-                <a class="song-name">
-                    <?php
-                    $meta = "/meta";
-                    $a = $link . $meta;
-                    $api = file_get_contents($a);
-                    $call = json_decode($api, true);
+        <div class="container">
+            <div class="row">
+                <div class="col detailed">
+                    <a class="song-name">
+                        <?php
+                        $meta = "/meta";
+                        $a = $link . $meta;
+                        $api = file_get_contents($a);
+                        $call = json_decode($api, true);
 
-                    echo $call['globalMeta']['originFilename'];
-                    ?>
-                </a>
-                <br>
-                <a class="song-name">
-                    Thx to <a href="https://Lolis.love">Lolis.love</a>
-                </a>
-            </li>
+                        echo $call['globalMeta']['originFilename'];
+                        ?>
+                    </a>
+                </div>
+                <div class="col">
+                    <button id="back">
+                        <img src="content/svg/back.svg" alt="back">
+                    </button>
+                    <button id="play" onclick="play()">
+                        <img src="content/svg/play.svg" alt="back" onclick="play()">
+                    </button>
+                    <button id="pause" onclick="pause()">
+                        <img src="content/svg/pause.svg" alt="back" onclick="pause()">
+                    </button>
+                    <button id="next">
+                        <img src="content/svg/next.svg" alt="back">
+                    </button>
+                </div>
+                <div class="col">
 
-            <li class="button nav-i">
-                <button id="back">
-                    <img src="content/svg/back.svg" alt="back">
-                </button>
-                <button id="play" onclick="play()">
-                    <img src="content/svg/play.svg" alt="back" onclick="play()">
-                </button>
-                <button id="pause" onclick="pause()">
-                    <img src="content/svg/pause.svg" alt="back" onclick="pause()">
-                </button>
-                <button id="next">
-                    <img src="content/svg/next.svg" alt="back">
-                </button>
-            </li>
-        </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./content/js/play.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 
 </html>
