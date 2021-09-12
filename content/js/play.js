@@ -19,7 +19,7 @@ function pause() {
     pab.classList.add("hidden");
 }
 
-pl.addEventListener("play", play);
+pl.addEventListener("playing", play);
 pl.addEventListener("pause", pause);
 
 function back() {
