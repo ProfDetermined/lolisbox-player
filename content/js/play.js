@@ -34,3 +34,23 @@ pl.ontimeupdate = function () {
     var percentage = (pl.currentTime / pl.duration) * 100;
     dur.value = percentage
 };
+
+function pvol() {
+    pl.volume = pl.volume + 0.1;
+}
+
+function dvol() {
+    pl.volume = pl.volume - 0.1;
+}
+
+function mute() {
+    pl.muted = true;
+    document.getElementById("mute").classList.add("hidden");
+    document.getElementById("unmute").classList.remove("hidden");
+}
+
+function unmute() {
+    pl.muted = false;
+    document.getElementById("unmute").classList.add("hidden");
+    document.getElementById("mute").classList.remove("hidden");
+}
