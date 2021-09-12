@@ -8,7 +8,6 @@ html, body {
     bottom: 0;
     background-color: #242424;
     width: 100%;
-    height: 10%;
     padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -59,4 +58,18 @@ html, body {
 #dur {
     width: 100%;
     height: 50%;
+}
+
+@media only screen and (max-width: 576px){
+    .fixed_ft {
+        position: fixed;
+        bottom: 0;
+        background-color: #242424;
+        width: 100%;
+        height: 10%;
+        padding-top: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 0;
+    } 
 }
