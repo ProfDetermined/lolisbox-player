@@ -28,7 +28,7 @@ $link = $home . $id;
 
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
-            <div class="col-2 detailed">
+            <div class="col-md-2 detailed">
                 <a class="song-name" style="padding-left: 5px;">
                     <?php
                     $meta = "/meta";
@@ -40,7 +40,7 @@ $link = $home . $id;
                     ?>
                 </a>
             </div>
-            <div class="col-2" style="text-align: center;">
+            <div class="col-md-2" style="text-align: center;">
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
                 </button>
@@ -54,15 +54,23 @@ $link = $home . $id;
                     <img src="content/svg/next.svg" alt="back">
                 </button>
             </div>
-            <div class="col dur-h">
+            <div class="col-md-5 dur-h">
                 <progress id="dur" value="0" max="100"></progress>
             </div>
-            <div class="col-3">
-                <button id="vol" onclick="vol()" style="display: inline;">
-                    <img src="content/svg/volume.svg" alt="vol">
+            <div class="col-md-3" style="text-align: center;">
+                <button id="volup" onclick="dvol()">
+                    <img src="content/svg/volumed.svg" alt="vold">
                 </button>
-                <button id="mute" class="hidden" onclick="mute()" style="display: inline;">
+                <i>&nbsp;&nbsp;</i>
+                <button id="mute" onclick="mute()">
                     <img src="content/svg/mute.svg" alt="mute">
+                </button>
+                <button id="unmute" onclick="unmute()" class="hidden">
+                    <img src="content/svg/mute.svg" alt="mute">
+                </button>
+                <i>&nbsp;&nbsp;</i>
+                <button id="vol-d" onclick="pvol()">
+                    <img src="content/svg/volumeu.svg" alt="volu">
                 </button>
             </div>
         </div>
