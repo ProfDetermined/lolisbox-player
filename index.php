@@ -25,6 +25,14 @@ $lode = json_decode($local);
 </head>
 
 <body>
+    <?php
+    if (substr($link, -3) == "wav") {
+        echo "<audio controls id='mplay' class='hidden'>";
+        // autoplay
+        echo "<source src = '" . $link . "' type='audio/wav'>";
+        echo "</audio>";
+    }
+    ?>
 
     <div class="music">
         <ul style="list-style-type: none;">
@@ -49,14 +57,6 @@ $lode = json_decode($local);
         </ul>
     </div>
 
-    <?php
-    if (substr($link, -3) == "wav") {
-        echo "<audio controls id='mplay' class='hidden'>";
-        // autoplay
-        echo "<source src = '" . $link . "' type='audio/wav'>";
-        echo "</audio>";
-    }
-    ?>
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
             <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
