@@ -17,19 +17,20 @@ $link = $home . $id;
 </head>
 
 <body>
+
+
     <?php
     if (substr($link, -3) == "wav") {
-        echo "<audio controls autoplay id='mplay'>";
+        echo "<audio controls autoplay id='mplay' class='hidden'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
     }
     ?>
-
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
-            <div class="col-md-2 detailed">
-                <a class="song-name" style="padding-left: 5px;">
+            <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
+                <a class="song-name" style="text-align: center;">
                     <?php
                     $meta = "/meta";
                     $a = $link . $meta;
@@ -39,8 +40,11 @@ $link = $home . $id;
                     echo $call['globalMeta']['originFilename'];
                     ?>
                 </a>
+                <div class="col-sm-12">
+                    &nbsp;
+                </div>
             </div>
-            <div class="col-md-2" style="text-align: center;">
+            <div class="col-md-2 col-sm-12" style="text-align: center;">
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
                 </button>
@@ -54,10 +58,10 @@ $link = $home . $id;
                     <img src="content/svg/next.svg" alt="back">
                 </button>
             </div>
-            <div class="col-md-5 dur-h">
-                <progress id="dur" value="0" max="100"></progress>
+            <div class="col-md-5 col-sm-12 dur-h">
+                <progress id="dur" value="0" max="100" width="100%"></progress>
             </div>
-            <div class="col-md-3" style="text-align: center;">
+            <div class="col-md-3 col-sm-12" style="text-align: center;">
                 <button id="volup" onclick="dvol()">
                     <img src="content/svg/volumed.svg" alt="vold">
                 </button>
@@ -72,6 +76,9 @@ $link = $home . $id;
                 <button id="vol-d" onclick="pvol()">
                     <img src="content/svg/volumeu.svg" alt="volu">
                 </button>
+            </div>
+            <div class="col-sm-12">
+                &nbsp;
             </div>
         </div>
     </div>
