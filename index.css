@@ -3,6 +3,18 @@ html, body {
     padding: 0;
 }
 
+.music {
+    padding: 1rem;
+}
+
+.music a {
+    text-decoration: none;
+}
+
+.music a:hover {
+    text-decoration: none;
+}
+
 .fixed_ft {
     position: fixed;
     bottom: 0;
