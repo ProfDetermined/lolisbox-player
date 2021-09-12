@@ -8,15 +8,38 @@ html, body {
     bottom: 0;
     background-color: #242424;
     width: 100%;
-    padding: 10px;
+    height: 10%;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
 }
 
-.nav-i {
+li {
     display: inline;
+    height: 100%;
+    line-height: 40px;
+    margin: 0;
+}
+
+.detailed {
+    color: white;
+    font-size: 20px;
+    padding-top: 0.3rem;
+}
+
+.detailed a {
+    text-decoration: none;
+    color: white;
+}
+.detailed a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .hidden {
     display: none;
+    position: absolute;
 }
 
 .fixed_ft button {
