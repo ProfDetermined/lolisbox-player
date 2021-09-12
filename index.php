@@ -58,11 +58,11 @@ $link = $home . $id;
                 <progress id="dur" value="0" max="100"></progress>
             </div>
             <div class="col-3">
-                <button id="next" onclick="mute()">
-                    <img src="content/svg/next.svg" alt="back">
+                <button id="vol" onclick="vol()" style="display: inline;">
+                    <img src="content/svg/volume.svg" alt="vol">
                 </button>
-                <button id="next" onclick="next()">
-                    <img src="content/svg/next.svg" alt="back">
+                <button id="mute" class="hidden" onclick="mute()" style="display: inline;">
+                    <img src="content/svg/mute.svg" alt="mute">
                 </button>
             </div>
         </div>
