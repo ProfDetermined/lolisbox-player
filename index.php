@@ -47,7 +47,7 @@ $link = $home . $id;
                 <button id="play" class="hidden" onclick="play()">
                     <img src="content/svg/play.svg" alt="back" onclick="play()">
                 </button>
-                <button id="pause" onclick="pause()">
+                <button id="pause" class="hidden" onclick="pause()">
                     <img src="content/svg/pause.svg" alt="back" onclick="pause()">
                 </button>
                 <button id="next">
@@ -55,7 +55,7 @@ $link = $home . $id;
                 </button>
             </div>
             <div class="col">
-
+                <progress id="dur" max=100></progress>
             </div>
         </div>
     </div>
