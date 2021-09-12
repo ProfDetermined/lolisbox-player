@@ -18,6 +18,9 @@ function pause() {
     pab.classList.add("hidden");
 }
 
+pl.addEventListener("playing", play);
+pl.addEventListener("pause", pause);
+
 function back() {
     pl.currentTime = pl.currentTime - 5;
 }
@@ -31,6 +34,4 @@ function dur() {
     dur.value = pl.currentTime;
 }
 
-pl.addEventListener("playing", play);
-pl.addEventListener("pause", pause);
 pl.addEventListener("playing", dur);
