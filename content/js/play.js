@@ -5,6 +5,7 @@ const nxt = document.getElementById("next");
 const prv = document.getElementById("back");
 
 const dur = document.getElementById("dur");
+const vol = document.getElementById("vol")
 
 function play() {
     pl.play();
@@ -33,3 +34,8 @@ pl.ontimeupdate = function () {
     var percentage = (pl.currentTime / pl.duration) * 100;
     dur.value = percentage
 };
+
+pl.ontimeupdate = function () {
+    var volume = pl.volume * 10;
+    vol.value = volume;
+}
