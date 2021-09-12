@@ -29,7 +29,7 @@ $link = $home . $id;
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
             <div class="col-2 detailed">
-                <a class="song-name">
+                <a class="song-name" style="padding-left: 5px;">
                     <?php
                     $meta = "/meta";
                     $a = $link . $meta;
@@ -57,8 +57,13 @@ $link = $home . $id;
             <div class="col dur-h">
                 <progress id="dur" value="0" max="100"></progress>
             </div>
-            <div class="col">
-
+            <div class="col-3">
+                <button id="next" onclick="mute()">
+                    <img src="content/svg/next.svg" alt="back">
+                </button>
+                <button id="next" onclick="next()">
+                    <img src="content/svg/next.svg" alt="back">
+                </button>
             </div>
         </div>
     </div>
