@@ -21,3 +21,10 @@ function pause() {
 pl.addEventListener("playing", play);
 pl.addEventListener("pause", pause);
 
+function back() {
+    pl.currentTime = pl.currentTime - 5;
+}
+
+function next() {
+    pl.currentTime = pl.currentTime + 5;
+}
