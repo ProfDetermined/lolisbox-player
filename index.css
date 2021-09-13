@@ -6,9 +6,14 @@ html, body {
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.cover video#mplay {
+    width: 98%;
+    height: 80%;
+}
+
 video#mplay {
-    width: 90%;
-    height: 70%;
+    width: 100%;
+    height: auto;
 }
 
 .stat {
@@ -99,8 +104,8 @@ video#mplay {
 }
 
 .fixed_ft button img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: auto;
 }
 
 .dur-h {
@@ -110,4 +115,12 @@ video#mplay {
 #dur {
     width: 100%;
     height: 50%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .cover video#mplay {
+        width: 98%;
+        height: auto;
+    }
 }

@@ -44,8 +44,13 @@ pl.ontimeupdate = function () {
         if (pl.readyState > 0) {
             var fmin = parseInt(pl.duration / 60, 10)
             var fsec = parseInt(pl.duration % 60, 10)
+
+            if (fmin < 10) {
+                fmin = "0" + fmin
+            }
+
             if (fsec < 10) {
-                seconds = "0"+seconds
+                fsec = "0" + fsec
             }
 
             fDur.innerHTML = fmin + ":" + fsec
@@ -58,6 +63,11 @@ pl.ontimeupdate = function () {
         if (pl.readyState > 0) {
             var cmin = parseInt(pl.currentTime / 60, 10)
             var csec = parseInt(pl.currentTime % 60, 10)
+
+            if (cmin < 10) {
+                cmin = "0" + cmin
+            }
+
             if (csec < 10) {
                 csec = "0" + csec
             }

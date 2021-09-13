@@ -7,9 +7,9 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
-echo "<script>console.log('" . $in . "')</script>";
-echo "<script>console.log('" . substr($in, 0, 25) . "')</script>";
-echo "<script>console.log('" . substr($in, 25) . "')</script>";
+// echo "<script>console.log('" . $in . "')</script>";
+// echo "<script>console.log('" . substr($in, 0, 25) . "')</script>";
+// echo "<script>console.log('" . substr($in, 25) . "')</script>";
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
@@ -49,34 +49,37 @@ $lode = json_decode($local);
 </head>
 
 <body>
-    <?php
-    if (substr($link, -3) == "wav") {
-        echo "<audio controls autoplay id='mplay' class='hidden'>";
-        // autoplay
-        echo "<source src = '" . $link . "' type='audio/wav'>";
-        echo "</audio>";
-    } else if (substr($link, -3) == "mp3") {
-        echo "<audio controls autoplay id='mplay' class='hidden'>";
-        // autoplay
-        echo "<source src = '" . $link . "' type='audio/mp3'>";
-        echo "</audio>";
-    } else if (substr($link, -13) == "videoplayback") {
-        echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
-        echo "<video autoplay id='mplay' onclick='pptoggle()'>";
-        echo "<source src='" . $link . "' type='video/mp4'>";
-        echo "</video>";
-        echo "</center>";
-    } else if (substr($link, -3) == "mp4") {
-        echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
-        echo "<video autoplay id='mplay' onclick='pptoggle()'>";
-        echo "<source src='" . $link . "' type='video/mp4'>";
-        echo "</video>";
-        echo "</center>";
-    }
-    ?>
+    <br>
+    <div class="cover">
+        <?php
+        if (substr($link, -3) == "wav") {
+            echo "<audio controls autoplay id='mplay' class='hidden'>";
+            // autoplay
+            echo "<source src = '" . $link . "' type='audio/wav'>";
+            echo "</audio>";
+        } else if (substr($link, -3) == "mp3") {
+            echo "<audio controls autoplay id='mplay' class='hidden'>";
+            // autoplay
+            echo "<source src = '" . $link . "' type='audio/mp3'>";
+            echo "</audio>";
+        } else if (substr($link, -13) == "videoplayback") {
+            echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
+            echo "<video autoplay id='mplay' onclick='pptoggle()'>";
+            echo "<source src='" . $link . "' type='video/mp4'>";
+            echo "</video>";
+            echo "</center>";
+        } else if (substr($link, -3) == "mp4") {
+            echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
+            echo "<video autoplay id='mplay' onclick='pptoggle()'>";
+            echo "<source src='" . $link . "' type='video/mp4'>";
+            echo "</video>";
+            echo "</center>";
+        }
+        ?>
+    </div>
 
     <div class="music" id="mcon">
-        <center>
+        <center style="padding-bottom: 10rem; margin-bottom: 4rem;">
             <form action="engine.php" class="enterl container" method="GET">
                 <div class="row">
                     <div class="col-2"></div>
@@ -107,7 +110,6 @@ $lode = json_decode($local);
                 echo "<br>";
             }
             ?>
-            <br><br><br><br>
         </center>
     </div>
 
