@@ -150,14 +150,14 @@ $lode = json_decode($local);
 
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
-            <div class="col-md-1 col-sm-12 detailed" style="text-align: center;">
+            <div class="col-lg-2 col-md-12 detailed" style="text-align: center;">
                 <a class="song-name" style="text-align: center;">
                     <?php
                     echo $call['globalMeta']['originFilename'];
                     ?>
                 </a>
             </div>
-            <div class="col-md-3 col-sm-12" style="text-align: center;">
+            <div class="col-lg-3 col-md-12" style="text-align: center;">
                 <?php
                 if (substr($link, -3) == "wav") {
                     echo "<button id='no-pip'>";
@@ -196,10 +196,10 @@ $lode = json_decode($local);
                     <img src="content/svg/unloop.svg" alt="unloop">
                 </button>
             </div>
-            <div class="col-md-5 col-sm-12 dur-h">
+            <div class="col-lg-4 col-md-12 dur-h">
                 <progress id="dur" value="0" max="100" width="100%"></progress>
             </div>
-            <div class="col-md-3 col-sm-12" style="text-align: center;">
+            <div class="col-lg-3 col-md-12" style="text-align: center;">
                 <button id="volup" onclick="dvol()">
                     <img src="content/svg/volumed.svg" alt="vold">
                 </button>
@@ -215,10 +215,8 @@ $lode = json_decode($local);
                     <img src="content/svg/volumeu.svg" alt="volu">
                 </button>
             </div>
-            <div class="col-sm-12">
-                &nbsp;
-            </div>
         </div>
+        <br>
     </div>
     <script src="./content/js/play.js"></script>
     <script>
