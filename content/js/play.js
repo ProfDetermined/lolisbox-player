@@ -77,7 +77,7 @@ function piptog() {
         document.exitPictureInPicture();
     } else {
         if (document.pictureInPictureEnabled) {
-            video.requestPictureInPicture();
+            pl.requestPictureInPicture();
         }
     }
 }
