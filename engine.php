@@ -3,13 +3,14 @@ $home = "https://box.lolis.love/0/";
 
 $in = $_GET['id'];
 
-// echo substr($in, 19); //testing row
+// testing row
+// echo substr($in, 25);
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
     echo "<script>console.log(". $id .")</script>";
-} else if (substr($in, 0, 24) == $home) {
-    $id = substr($in, 24);
+} else if (substr($in, 0, 25) == $home) {
+    $id = substr($in, 25);
     echo "<script>console.log(" . $id . ")</script>";
 } else {
     $id = $in;
