@@ -7,8 +7,8 @@ html, body {
 }
 
 video#mplay {
-    width: 80%;
-    height: auto;
+    width: 90%;
+    height: 70%;
 }
 
 .stat {
@@ -16,6 +16,8 @@ video#mplay {
     font-size: 15px;
     background-color: whitesmoke;
     padding: 0.25rem;
+    width: 100%;
+    margin: 0;
 }
 
 .enterl {
@@ -62,10 +64,7 @@ video#mplay {
     bottom: 0;
     background-color: #242424;
     width: 100%;
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 0;
+    padding: 0;
 }
 
 .detailed {
