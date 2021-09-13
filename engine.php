@@ -1,6 +1,21 @@
 <?php
 $home = "https://box.lolis.love/0/";
-$id = $_GET['id'];
+
+$in = $_GET['id'];
+
+// echo substr($in, 19); //testing row
+
+if (substr($in, 0, 19) == "https://lolis.love/") {
+    $id = substr($in, 19);
+    echo "<script>console.log(". $id .")</script>";
+} else if (substr($in, 0, 24) == $home) {
+    $id = substr($in, 24);
+    echo "<script>console.log(" . $id . ")</script>";
+} else {
+    $id = $in;
+    echo "<script>console.log(" . $id . ")</script>";
+}
+
 $link = $home . $id;
 
 $meta = "/meta";
@@ -56,7 +71,7 @@ $lode = json_decode($local);
                     echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
                     echo "</button>";
                 } else {
-                    echo "<a href='/?id=" . $lode->link_id . "'>";
+                    echo "<a href='?id=" . $lode->link_id . "'>";
                     echo "<button type='button' class='btn btn-success'>";
                     echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
                     echo "</button>";
