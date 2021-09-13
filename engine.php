@@ -72,7 +72,44 @@ $lode = json_decode($local);
         echo "</center>";
     }
     ?>
-    <center>
+
+    <div class="music" id="mcon">
+        <center>
+            <form action="engine.php" class="enterl container" method="GET">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8" style="text-align: center;">
+                        <input type="text" placeholder="Enter Link/ID From lolis.love" class="formc" name="id">
+                        <button type="submit" class="btn btn-primary">
+                            Go!!
+                        </button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </form>
+            <br>
+            <?php
+            foreach ($lode as $lode) {
+                if ($lode->link_id == " ") {
+                    echo "<button type='button' class='btn btn-secondary'>";
+                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
+                    echo "</button>";
+                } else {
+                    echo "<a href='?id=" . $lode->link_id . "'>";
+                    echo "<button type='button' class='btn btn-success'>";
+                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
+                    echo "</button>";
+                    echo "</a>";
+                }
+                echo "<br>";
+                echo "<br>";
+            }
+            ?>
+            <br><br><br><br>
+        </center>
+    </div>
+    
+    <div class="fixed_ft">
         <div class="stat">
             <span id="playStat" class="btn btn-success">
                 Nothing Playing..
@@ -110,110 +147,74 @@ $lode = json_decode($local);
                 PiP : off
             </span>
         </div>
-    </center>
-
-    <div class="music" id="mcon">
-        <center>
-            <form action="engine.php" class="enterl container" method="GET">
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8" style="text-align: center;">
-                        <input type="text" placeholder="Enter Link/ID From lolis.love" class="formc" name="id">
-                        <button type="submit" class="btn btn-primary">
-                            Go!!
-                        </button>
-                    </div>
-                    <div class="col-2"></div>
+        <br>
+        <div class="container">
+            <div class="row" style="top: 50%;">
+                <div class="col-lg-2 col-md-12 detailed" style="text-align: center;">
+                    <a class="song-name" style="text-align: center;">
+                        <?php
+                        echo $call['globalMeta']['originFilename'];
+                        ?>
+                    </a>
                 </div>
-            </form>
-            <br>
-            <?php
-            foreach ($lode as $lode) {
-                if ($lode->link_id == " ") {
-                    echo "<button type='button' class='btn btn-secondary'>";
-                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
-                    echo "</button>";
-                } else {
-                    echo "<a href='?id=" . $lode->link_id . "'>";
-                    echo "<button type='button' class='btn btn-success'>";
-                    echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
-                    echo "</button>";
-                    echo "</a>";
-                }
-                echo "<br>";
-                echo "<br>";
-            }
-            ?>
-            <br><br><br><br>
-        </center>
-    </div>
-
-    <div class="container-fluid fixed_ft">
-        <div class="row" style="top: 50%;">
-            <div class="col-lg-2 col-md-12 detailed" style="text-align: center;">
-                <a class="song-name" style="text-align: center;">
+                <div class="col-lg-3 col-md-12" style="text-align: center;">
                     <?php
-                    echo $call['globalMeta']['originFilename'];
+                    if (substr($link, -3) == "wav") {
+                        echo "<button id='no-pip'>";
+                        echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
+                        echo "</button>";
+                    } else if (substr($link, -3) == "mp3") {
+                        echo "<button id='no-pip'>";
+                        echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
+                        echo "</button>";
+                    } else if (substr($link, -13) == "videoplayback") {
+                        echo "<button id='pip-en' onclick='piptog()'>";
+                        echo "<img src='content/svg/pipen.svg' alt='pip'>";
+                        echo "</button>";
+                        echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
+                        echo "<img src='content/svg/pipdis.svg' alt='pip'>";
+                        echo "</button>";
+                    } else if (substr($link, -3) == "mp4") {
+                    }
                     ?>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-12" style="text-align: center;">
-                <?php
-                if (substr($link, -3) == "wav") {
-                    echo "<button id='no-pip'>";
-                    echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
-                    echo "</button>";
-                } else if (substr($link, -3) == "mp3") {
-                    echo "<button id='no-pip'>";
-                    echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
-                    echo "</button>";
-                } else if (substr($link, -13) == "videoplayback") {
-                    echo "<button id='pip-en' onclick='piptog()'>";
-                    echo "<img src='content/svg/pipen.svg' alt='pip'>";
-                    echo "</button>";
-                    echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
-                    echo "<img src='content/svg/pipdis.svg' alt='pip'>";
-                    echo "</button>";
-                } else if (substr($link, -3) == "mp4") {
-                }
-                ?>
-                <button id="back" onclick="back()">
-                    <img src="content/svg/back.svg" alt="back">
-                </button>
-                <button id="play" class="" onclick="play()">
-                    <img src="content/svg/play.svg" alt="play" onclick="play()">
-                </button>
-                <button id="pause" class="hidden" onclick="pause()">
-                    <img src="content/svg/pause.svg" alt="pause" onclick="pause()">
-                </button>
-                <button id="next" onclick="next()">
-                    <img src="content/svg/next.svg" alt="next">
-                </button>
-                <button id="loop" onclick="ltoggle()" class="hidden">
-                    <img src="content/svg/loop.svg" alt="loop">
-                </button>
-                <button id="unloop" onclick="ltoggle()">
-                    <img src="content/svg/unloop.svg" alt="unloop">
-                </button>
-            </div>
-            <div class="col-lg-4 col-md-12 dur-h">
-                <progress id="dur" value="0" max="100" width="100%"></progress>
-            </div>
-            <div class="col-lg-3 col-md-12" style="text-align: center;">
-                <button id="volup" onclick="dvol()">
-                    <img src="content/svg/volumed.svg" alt="vold">
-                </button>
-                <i>&nbsp;&nbsp;</i>
-                <button id="mute" onclick="mute()">
-                    <img src="content/svg/mute.svg" alt="mute">
-                </button>
-                <button id="unmute" onclick="unmute()" class="hidden">
-                    <img src="content/svg/mute.svg" alt="mute">
-                </button>
-                <i>&nbsp;&nbsp;</i>
-                <button id="vol-d" onclick="pvol()">
-                    <img src="content/svg/volumeu.svg" alt="volu">
-                </button>
+                    <button id="back" onclick="back()">
+                        <img src="content/svg/back.svg" alt="back">
+                    </button>
+                    <button id="play" class="" onclick="play()">
+                        <img src="content/svg/play.svg" alt="play" onclick="play()">
+                    </button>
+                    <button id="pause" class="hidden" onclick="pause()">
+                        <img src="content/svg/pause.svg" alt="pause" onclick="pause()">
+                    </button>
+                    <button id="next" onclick="next()">
+                        <img src="content/svg/next.svg" alt="next">
+                    </button>
+                    <button id="loop" onclick="ltoggle()" class="hidden">
+                        <img src="content/svg/loop.svg" alt="loop">
+                    </button>
+                    <button id="unloop" onclick="ltoggle()">
+                        <img src="content/svg/unloop.svg" alt="unloop">
+                    </button>
+                </div>
+                <div class="col-lg-4 col-md-12 dur-h">
+                    <progress id="dur" value="0" max="100" width="100%"></progress>
+                </div>
+                <div class="col-lg-3 col-md-12" style="text-align: center;">
+                    <button id="volup" onclick="dvol()">
+                        <img src="content/svg/volumed.svg" alt="vold">
+                    </button>
+                    <i>&nbsp;&nbsp;</i>
+                    <button id="mute" onclick="mute()">
+                        <img src="content/svg/mute.svg" alt="mute">
+                    </button>
+                    <button id="unmute" onclick="unmute()" class="hidden">
+                        <img src="content/svg/mute.svg" alt="mute">
+                    </button>
+                    <i>&nbsp;&nbsp;</i>
+                    <button id="vol-d" onclick="pvol()">
+                        <img src="content/svg/volumeu.svg" alt="volu">
+                    </button>
+                </div>
             </div>
         </div>
         <br>
