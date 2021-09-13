@@ -7,7 +7,7 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
-echo substr($in, 25);
+// echo substr($in, 25);
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
@@ -124,8 +124,24 @@ $lode = json_decode($local);
                 </div>
             </div>
             <div class="col-md-2 col-sm-12" style="text-align: center;">
-                <?php 
-
+                <?php
+                if (substr($link, -3) == "wav") {
+                    echo "<button id='no-pip'>";
+                    echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
+                    echo "</button>";
+                } else if (substr($link, -3) == "mp3") {
+                    echo "<button id='no-pip'>";
+                    echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
+                    echo "</button>";
+                } else if (substr($link, -13) == "videoplayback") {
+                    echo "<button id='pip-en' onclick='piptog()'>";
+                    echo "<img src='content/svg/pipen.svg' alt='pip'>";
+                    echo "</button>";
+                    echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
+                    echo "<img src='content/svg/pipdis.svg' alt='pip'>";
+                    echo "</button>";
+                } else if (substr($link, -3) == "mp4") {
+                }   
                 ?>
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
@@ -139,10 +155,10 @@ $lode = json_decode($local);
                 <button id="next" onclick="next()">
                     <img src="content/svg/next.svg" alt="next">
                 </button>
-                <button id="loop" onclick="ltoggle()">
+                <button id="loop" onclick="ltoggle()" class="hidden">
                     <img src="content/svg/loop.svg" alt="loop">
                 </button>
-                <button id="unloop" onclick="ltoggle()" class="hidden">
+                <button id="unloop" onclick="ltoggle()">
                     <img src="content/svg/unloop.svg" alt="unloop">
                 </button>
             </div>

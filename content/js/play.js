@@ -63,15 +63,21 @@ function pptoggle() {
 function ltoggle() {
     if (pl.loop == true) {
         pl.loop = false;
-        document.getElementById("loop").classList.remove("hidden");
-        document.getElementById("unloop").classList.add("hidden");
-    } else if (pl.loop == false) {
-        pl.loop = true;
         document.getElementById("loop").classList.add("hidden");
         document.getElementById("unloop").classList.remove("hidden");
+    } else if (pl.loop == false) {
+        pl.loop = true;
+        document.getElementById("loop").classList.remove("hidden");
+        document.getElementById("unloop").classList.add("hidden");
     }
 }
 
 function piptog() {
-    
+    if (document.pictureInPictureElement) {
+        document.exitPictureInPicture();
+    } else {
+        if (document.pictureInPictureEnabled) {
+            video.requestPictureInPicture();
+        }
+    }
 }
