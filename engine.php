@@ -114,6 +114,12 @@ $lode = json_decode($local);
             <span id="playStat" class="btn btn-success">
                 Nothing Playing..
             </span>
+            <span class="space">
+                &nbsp;&nbsp;
+            </span>
+            <span id="loopStat" class="btn btn-warning">
+                Loop : Off
+            </span>
             <span>
                 &nbsp;&nbsp;
             </span>
@@ -128,12 +134,6 @@ $lode = json_decode($local);
                     xx:xx
                 </span>
             </span>
-            <span class="space">
-                &nbsp;&nbsp;
-            </span>
-            <span id="loopStat" class="btn btn-warning">
-                Loop : Off
-            </span>
             <span>
                 &nbsp;&nbsp;
             </span>
@@ -144,7 +144,7 @@ $lode = json_decode($local);
                 &nbsp;&nbsp;
             </span>
             <span id="pip" class="btn btn-danger">
-                PiP : off
+                PiP : Off
             </span>
         </div>
         <br>
