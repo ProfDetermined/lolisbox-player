@@ -71,24 +71,32 @@ pl.ontimeupdate = function () {
 
 function pvol() {
     pl.volume = pl.volume + 0.1
-    vStat.innerHTML = "Vol : " + pl.volume
+    vol = Math.floor(pl.volume * 10)
+    cvol = parseInt(vol)
+    vStat.innerHTML = "Vol : " + cvol
 }
 
 function dvol() {
     pl.volume = pl.volume - 0.1
-    vStat.innerHTML = "Vol : " + pl.volume
+    vol = Math.floor(pl.volume * 10)
+    cvol = parseInt(vol)
+    vStat.innerHTML = "Vol : " + vol
 }
 
 function mute() {
     pl.muted = true
-    vStat.innerHTML = "Vol : " + pl.volume
+    vol = Math.floor(pl.volume * 10)
+    cvol = parseInt(vol)
+    vStat.innerHTML = "Vol : " + vol
     document.getElementById("mute").classList.add("hidden")
     document.getElementById("unmute").classList.remove("hidden")
 }
 
 function unmute() {
     pl.muted = false
-    vStat.innerHTML = "Vol : " + pl.volume
+    vol = Math.floor(pl.volume * 10)
+    cvol = parseInt(vol)
+    vStat.innerHTML = "Vol : " + vol
     document.getElementById("unmute").classList.add("hidden")
     document.getElementById("mute").classList.remove("hidden")
 }
@@ -117,10 +125,12 @@ function ltoggle() {
 
 function piptog() {
     if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
+        pipS.innerHTML = "PiP : Off"
+        document.exitPictureInPicture()
     } else {
         if (document.pictureInPictureEnabled) {
-            pl.requestPictureInPicture();
+            pipS.innerHTML = "PiP : On"
+            pl.requestPictureInPicture()
         }
     }
 }
