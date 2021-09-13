@@ -7,7 +7,7 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
-// echo substr($in, 25);
+echo "<script>console.log('".substr($in, 25)."')</script>";
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
