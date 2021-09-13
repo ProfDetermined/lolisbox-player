@@ -62,3 +62,7 @@ function pptoggle() {
         pl.play();
     }
 }
+
+function ltoggle() {
+    
+}
