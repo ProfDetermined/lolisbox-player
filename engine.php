@@ -7,9 +7,9 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
-echo "<script>console.log('".$in."')</script>";
-echo "<script>console.log('".substr($in,0, 25)."')</script>";
-echo "<script>console.log('".substr($in, 25)."')</script>";
+echo "<script>console.log('" . $in . "')</script>";
+echo "<script>console.log('" . substr($in, 0, 25) . "')</script>";
+echo "<script>console.log('" . substr($in, 25) . "')</script>";
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
@@ -222,6 +222,25 @@ $lode = json_decode($local);
                     <button id="vol-d" onclick="pvol()">
                         <img src="content/svg/volumeu.svg" alt="volu">
                     </button>
+                    <?php
+                    if (substr($link, -3) == "wav") {
+                        echo "<button id='no-pip'>";
+                        echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
+                        echo "</button>";
+                    } else if (substr($link, -3) == "mp3") {
+                        echo "<button id='no-pip'>";
+                        echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
+                        echo "</button>";
+                    } else if (substr($link, -13) == "videoplayback") {
+                        echo "<button id='pip-en' onclick='fscreen()'>";
+                        echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                        echo "</button>";
+                    } else if (substr($link, -3) == "mp4") {
+                        echo "<button id='pip-en' onclick='fscreen()'>";
+                        echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                        echo "</button>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

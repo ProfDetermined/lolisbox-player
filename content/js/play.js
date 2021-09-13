@@ -134,3 +134,13 @@ function piptog() {
         }
     }
 }
+
+function fscreen() {
+    if (pl.requestFullscreen) {
+        pl.requestFullscreen();
+    } else if (pl.webkitRequestFullscreen) { /* Safari */
+        pl.webkitRequestFullscreen();
+    } else if (pl.msRequestFullscreen) { /* IE11 */
+        pl.msRequestFullscreen();
+    }
+}
