@@ -7,8 +7,36 @@ html, body {
 }
 
 video#mplay {
-    width: 90%;
+    width: 95%;
     height: auto;
+}
+
+.enterl {
+    text-align: center;
+}
+
+.enterl .formc {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 10%;
+    padding: .375rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    text-align: center;
+    transition: width .35s ease-in-out;
+}
+
+.enterl .formc:hover {
+    width: 60%;
+}
+
+.enterl .formc:focus {
+    width: 60%;
+}
+
+.enterl button.btn {
+    width: 10%;
 }
 
 .music {
