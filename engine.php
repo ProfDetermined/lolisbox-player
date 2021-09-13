@@ -4,17 +4,20 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
-// echo substr($in, 25);
+echo substr($in, 25);
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
-    echo "<script>console.log(" . $id . ")</script>";
-} else if (substr($in, 0, 25) == $home) {
+    echo "<script>console.log('" . $id . "')</script>";
+} else if (substr($in, 0, 25) == "https://box.loli.love/") {
     $id = substr($in, 25);
-    echo "<script>console.log(" . $id . ")</script>";
+    echo "<script>console.log('" . $id . "')</script>";
+} else if (substr($in, 0, 26) == "https://file.lolis.love/") {
+    $id = substr($in, 26);
+    echo "<script>console.log('" . $id . "')</script>";
 } else {
     $id = $in;
-    echo "<script>console.log(" . $id . ")</script>";
+    echo "<script>console.log('" . $id . "')</script>";
 }
 
 $link = $home . $id;
@@ -46,6 +49,11 @@ $lode = json_decode($local);
         echo "<audio controls autoplay id='mplay' class='hidden'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
+        echo "</audio>";
+    } else if (substr($link, -3) == "mp3") {
+        echo "<audio controls autoplay id='mplay' class='hidden'>";
+        // autoplay
+        echo "<source src = '" . $link . "' type='audio/mp3'>";
         echo "</audio>";
     } else if (substr($link, -13) == "videoplayback") {
         echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
@@ -113,6 +121,9 @@ $lode = json_decode($local);
                 </div>
             </div>
             <div class="col-md-2 col-sm-12" style="text-align: center;">
+                <?php 
+                    
+                ?>
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
                 </button>
