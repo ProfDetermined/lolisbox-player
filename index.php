@@ -21,6 +21,19 @@ $lode = json_decode($local);
 <body>
     <div class="music" id="mcon">
         <center>
+            <form action="engine.php" class="enterl container" method="GET">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8" style="text-align: center;">
+                        <input type="text" placeholder="Enter Link/ID From lolis.love" class="formc">
+                        <button type="submit" class="btn btn-primary">
+                            Go!!
+                        </button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </form>
+            <br>
             <?php
             foreach ($lode as $lode) {
                 if ($lode->link_id == " ") {
