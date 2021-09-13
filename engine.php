@@ -128,6 +128,9 @@ $lode = json_decode($local);
                 <button id="loop" onclick="ltoggle()">
                     <img src="content/svg/loop.svg" alt="loop">
                 </button>
+                <button id="unloop" onclick="ltoggle()" class="hidden">
+                    <img src="content/svg/unloop.svg" alt="unloop">
+                </button>
             </div>
             <div class="col-md-5 col-sm-12 dur-h">
                 <progress id="dur" value="0" max="100" width="100%"></progress>
