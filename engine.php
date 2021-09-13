@@ -34,7 +34,7 @@ $lode = json_decode($local);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $call['globalMeta']['originFilename']; ?> | FastPlayer5</title>
+    <title><?php echo $call['globalMeta']['originFilename']; ?> | LolisBox Player</title>
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="./content/svg/play.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -151,6 +151,74 @@ $lode = json_decode($local);
         </div>
     </div>
     <script src="./content/js/play.js"></script>
+    <script>
+        if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: 'Unforgettable',
+                artist: 'LolisBox Player for lolis.love',
+                album: 'LolisBox Player for lolis.love',
+                artwork: [{
+                        src: 'https://dummyimage.com/96x96',
+                        sizes: '96x96',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://dummyimage.com/128x128',
+                        sizes: '128x128',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://dummyimage.com/192x192',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://dummyimage.com/256x256',
+                        sizes: '256x256',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://dummyimage.com/384x384',
+                        sizes: '384x384',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://dummyimage.com/512x512',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    },
+                ]
+            });
+
+            navigator.mediaSession.setActionHandler('play', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('pause', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('stop', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('seekbackward', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('seekforward', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('seekto', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('previoustrack', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('nexttrack', function() {
+                /* Code excerpted. */
+            });
+            navigator.mediaSession.setActionHandler('skipad', function() {
+                /* Code excerpted. */
+            });
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
