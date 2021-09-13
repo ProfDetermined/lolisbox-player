@@ -54,51 +54,88 @@ $lode = json_decode($local);
         </center>
     </div>
 
-    <div class="fixed_ft container-fluid">
-        <div class="row" style="top: 50%;">
-            <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
-                <a class="song-name" style="text-align: center; width: 100%;">
-                    Nothing Playing Now..
-                </a>
-                <div class="col-sm-12 col-md-0">
-                    &nbsp;
+    <div class="fixed_ft">
+        <div class="stat">
+            <span id="playStat" class="btn btn-success">
+                Nothing Playing..
+            </span>
+            <span class="space">
+                &nbsp;&nbsp;
+            </span>
+            <span id="loopStat" class="btn btn-warning">
+                Loop : Off
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span class="btn btn-info">
+                <span id="curDur">
+                    xx:xx
+                </span>
+                <span>
+                    &nbsp;/&nbsp;
+                </span>
+                <span id="vidDur">
+                    xx:xx
+                </span>
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="volVal" class="btn btn-secondary">
+                Vol : 10
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="pip" class="btn btn-danger">
+                PiP : Off
+            </span>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row" style="top: 50%;">
+                <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
+                    <a class="song-name" style="text-align: center; width: 100%;">
+                        Nothing Playing Now..
+                    </a>
+                    <div class="col-sm-12 col-md-0">
+                        &nbsp;
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2 col-sm-12" style="text-align: center;">
-                <button id="back" onclick="back()">
-                    <img src="content/svg/back.svg" alt="back">
-                </button>
-                <button id="play" class="" onclick="play()">
-                    <img src="content/svg/play.svg" alt="back" onclick="play()">
-                </button>
-                <button id="pause" class="hidden" onclick="pause()">
-                    <img src="content/svg/pause.svg" alt="back" onclick="pause()">
-                </button>
-                <button id="next" onclick="next()">
-                    <img src="content/svg/next.svg" alt="back">
-                </button>
-            </div>
-            <div class="col-md-5 col-sm-12 dur-h">
-                <progress id="dur" value="0" max="100" width="100%"></progress>
-            </div>
-            <div class="col-md-3 col-sm-12" style="text-align: center;">
-                <button id="volup" onclick="dvol()">
-                    <img src="content/svg/volumed.svg" alt="vold">
-                </button>
-                <i>&nbsp;&nbsp;</i>
-                <button id="mute" onclick="mute()">
-                    <img src="content/svg/mute.svg" alt="mute">
-                </button>
-                <button id="unmute" onclick="unmute()" class="hidden">
-                    <img src="content/svg/mute.svg" alt="mute">
-                </button>
-                <i>&nbsp;&nbsp;</i>
-                <button id="vol-d" onclick="pvol()">
-                    <img src="content/svg/volumeu.svg" alt="volu">
-                </button>
-            </div>
-            <div class="col-sm-12">
-                &nbsp;
+                <div class="col-md-2 col-sm-12" style="text-align: center;">
+                    <button id="back" onclick="back()">
+                        <img src="content/svg/back.svg" alt="back">
+                    </button>
+                    <button id="play" class="" onclick="play()">
+                        <img src="content/svg/play.svg" alt="back" onclick="play()">
+                    </button>
+                    <button id="pause" class="hidden" onclick="pause()">
+                        <img src="content/svg/pause.svg" alt="back" onclick="pause()">
+                    </button>
+                    <button id="next" onclick="next()">
+                        <img src="content/svg/next.svg" alt="back">
+                    </button>
+                </div>
+                <div class="col-md-5 col-sm-12 dur-h">
+                    <progress id="dur" value="0" max="100" width="100%"></progress>
+                </div>
+                <div class="col-md-3 col-sm-12" style="text-align: center;">
+                    <button id="volup" onclick="dvol()">
+                        <img src="content/svg/volumed.svg" alt="vold">
+                    </button>
+                    <i>&nbsp;&nbsp;</i>
+                    <button id="mute" onclick="mute()">
+                        <img src="content/svg/mute.svg" alt="mute">
+                    </button>
+                    <button id="unmute" onclick="unmute()" class="hidden">
+                        <img src="content/svg/mute.svg" alt="mute">
+                    </button>
+                    <i>&nbsp;&nbsp;</i>
+                    <button id="vol-d" onclick="pvol()">
+                        <img src="content/svg/volumeu.svg" alt="volu">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
