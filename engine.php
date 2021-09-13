@@ -40,7 +40,7 @@ $lode = json_decode($local);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $call['globalMeta']['originFilename']; ?> | LolisBox Player</title>
+    <title><?php echo $call['fileMeta']['originFilename']; ?> | LolisBox Player</title>
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="./content/svg/play.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -153,7 +153,7 @@ $lode = json_decode($local);
                 <div class="col-lg-2 col-md-12 detailed" style="text-align: center;">
                     <a class="song-name" style="text-align: center;">
                         <?php
-                        echo $call['globalMeta']['originFilename'];
+                        echo $call['fileMeta']['originFilename'];
                         ?>
                     </a>
                 </div>
@@ -223,7 +223,7 @@ $lode = json_decode($local);
     <script>
         if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
-                title: '<?php echo $call['globalMeta']['originFilename']; ?>',
+                title: '<?php echo $call['fileMeta']['originFilename']; ?>',
                 artist: 'LolisBox Player for lolis.love',
                 album: 'LolisBox Player for lolis.love',
                 artwork: [{
