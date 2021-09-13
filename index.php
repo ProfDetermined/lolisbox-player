@@ -25,7 +25,7 @@ $lode = json_decode($local);
                 <div class="row">
                     <div class="col-2"></div>
                     <div class="col-8" style="text-align: center;">
-                        <input type="text" placeholder="Enter Link/ID From lolis.love" class="formc">
+                        <input type="text" placeholder="Enter Link/ID From lolis.love" class="formc" name="id">
                         <button type="submit" class="btn btn-primary">
                             Go!!
                         </button>
