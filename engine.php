@@ -50,14 +50,14 @@ $lode = json_decode($local);
     } else if (substr($link, -13) == "videoplayback") {
         echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
         echo "<center style='padding: 1rem; padding-bottom: 0;'>";
-        echo "<video autoplay id='mplay'>";
+        echo "<video autoplay id='mplay' onclick='pptoggle()'>";
         echo "<source src='" . $link . "' type='video/mp4'>";
         echo "</video>";
         echo "</center>";
     } else if (substr($link, -3) == "mp4") {
         echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
         echo "<center style='padding: 1rem; padding-bottom: 0;'>";
-        echo "<video autoplay id='mplay'>";
+        echo "<video autoplay id='mplay' onclick='pptoggle()'>";
         echo "<source src='" . $link . "' type='video/mp4'>";
         echo "</video>";
         echo "</center>";
