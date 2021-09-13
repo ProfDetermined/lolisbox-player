@@ -11,6 +11,11 @@ video#mplay {
     height: auto;
 }
 
+.stat {
+    text-align: center;
+    font-size: 15px;
+}
+
 .enterl {
     text-align: center;
 }

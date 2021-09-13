@@ -74,6 +74,43 @@ $lode = json_decode($local);
         echo "</center>";
     }
     ?>
+    <center>
+        <div class="stat">
+            <span id="playstat">
+                playStat
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="curDur">
+                curDur
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="vidDur">
+                vidDur
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span>
+                playS
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="volVal">
+                volValue
+            </span>
+            <span>
+                &nbsp;&nbsp;
+            </span>
+            <span id="pip">
+                pip?
+            </span>
+        </div>
+    </center>
 
     <div class="music" id="mcon">
         <center>
@@ -138,7 +175,7 @@ $lode = json_decode($local);
                     echo "<img src='content/svg/pipdis.svg' alt='pip'>";
                     echo "</button>";
                 } else if (substr($link, -3) == "mp4") {
-                }   
+                }
                 ?>
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
