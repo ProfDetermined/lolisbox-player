@@ -8,7 +8,7 @@ $in = $_GET['id'];
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
-    echo "<script>console.log(". $id .")</script>";
+    echo "<script>console.log(" . $id . ")</script>";
 } else if (substr($in, 0, 25) == $home) {
     $id = substr($in, 25);
     echo "<script>console.log(" . $id . ")</script>";
@@ -36,6 +36,7 @@ $lode = json_decode($local);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $call['globalMeta']['originFilename']; ?> | FastPlayer5</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="https://box.lolis.love/0/m27hu.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
@@ -50,7 +51,7 @@ $lode = json_decode($local);
         echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
         echo "<center style='padding: 1rem; padding-bottom: 0;'>";
         echo "<video autoplay id='mplay'>";
-        echo "<source src='". $link ."' type='video/mp4'>";
+        echo "<source src='" . $link . "' type='video/mp4'>";
         echo "</video>";
         echo "</center>";
     } else if (substr($link, -3) == "mp4") {
