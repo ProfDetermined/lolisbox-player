@@ -113,17 +113,14 @@ $lode = json_decode($local);
 
     <div class="container-fluid fixed_ft">
         <div class="row" style="top: 50%;">
-            <div class="col-md-2 col-sm-12 detailed" style="text-align: center;">
+            <div class="col-md-1 col-sm-12 detailed" style="text-align: center;">
                 <a class="song-name" style="text-align: center;">
                     <?php
                     echo $call['globalMeta']['originFilename'];
                     ?>
                 </a>
-                <div class="col-sm-12">
-                    &nbsp;
-                </div>
             </div>
-            <div class="col-md-2 col-sm-12" style="text-align: center;">
+            <div class="col-md-3 col-sm-12" style="text-align: center;">
                 <?php
                 if (substr($link, -3) == "wav") {
                     echo "<button id='no-pip'>";
