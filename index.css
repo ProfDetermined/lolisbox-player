@@ -14,6 +14,8 @@ video#mplay {
 .stat {
     text-align: center;
     font-size: 15px;
+    background-color: whitesmoke;
+    padding: 0.25rem;
 }
 
 .enterl {
@@ -38,10 +40,6 @@ video#mplay {
 
 .enterl .formc:focus {
     width: 60%;
-}
-
-.enterl button.btn {
-    width: 10%;
 }
 
 .music {
