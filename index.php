@@ -11,7 +11,6 @@ $call = json_decode($api, true);
 $local = file_get_contents('./content/db/song.json');
 $lode = json_decode($local);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,18 +26,31 @@ $lode = json_decode($local);
 <body>
     <?php
     if (substr($link, -3) == "wav") {
-        echo "<audio controls id='mplay' class='hidden'>";
+        echo "<audio controls autoplay id='mplay' class='hidden'>";
         // autoplay
         echo "<source src = '" . $link . "' type='audio/wav'>";
         echo "</audio>";
+    } else if (substr($link, -13) == "videoplayback") {
+        echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
+        echo "<center style='padding: 1rem; padding-bottom: 0;'>";
+        echo "<video autoplay id='mplay'>";
+        echo "<source src='". $link ."' type='video/mp4'>";
+        echo "</video>";
+        echo "</center>";
+    } else if (substr($link, -3) == "mp4") {
+        echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
+        echo "<center style='padding: 1rem; padding-bottom: 0;'>";
+        echo "<video autoplay id='mplay'>";
+        echo "<source src='" . $link . "' type='video/mp4'>";
+        echo "</video>";
+        echo "</center>";
     }
     ?>
 
-    <div class="music">
-        <ul style="list-style-type: none;">
+    <div class="music" id="mcon">
+        <center>
             <?php
             foreach ($lode as $lode) {
-                echo "<li>";
                 if ($lode->link_id == " ") {
                     echo "<button type='button' class='btn btn-secondary'>";
                     echo $lode->id . ". " . "[" . $lode->album . "] " . $lode->artist . " - " . $lode->song;
@@ -50,11 +62,12 @@ $lode = json_decode($local);
                     echo "</button>";
                     echo "</a>";
                 }
-                echo "</li>";
+                echo "<br>";
                 echo "<br>";
             }
             ?>
-        </ul>
+            <br><br><br><br>
+        </center>
     </div>
 
     <div class="container-fluid fixed_ft">
