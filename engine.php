@@ -157,37 +157,37 @@ $lode = json_decode($local);
                 title: '<?php echo $call['globalMeta']['originFilename']; ?>',
                 artist: 'LolisBox Player for lolis.love',
                 album: 'LolisBox Player for lolis.love',
-                // artwork: [{
-                //         src: 'https://dummyimage.com/96x96',
-                //         sizes: '96x96',
-                //         type: 'image/png'
-                //     },
-                //     {
-                //         src: 'https://dummyimage.com/128x128',
-                //         sizes: '128x128',
-                //         type: 'image/png'
-                //     },
-                //     {
-                //         src: 'https://dummyimage.com/192x192',
-                //         sizes: '192x192',
-                //         type: 'image/png'
-                //     },
-                //     {
-                //         src: 'https://dummyimage.com/256x256',
-                //         sizes: '256x256',
-                //         type: 'image/png'
-                //     },
-                //     {
-                //         src: 'https://dummyimage.com/384x384',
-                //         sizes: '384x384',
-                //         type: 'image/png'
-                //     },
-                //     {
-                //         src: 'https://dummyimage.com/512x512',
-                //         sizes: '512x512',
-                //         type: 'image/png'
-                //     },
-                // ]
+                artwork: [{
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=96&height=96',
+                        sizes: '96x96',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=128&height=128',
+                        sizes: '128x128',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=192&height=192',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=256&height=256',
+                        sizes: '256x256',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=384&height=384',
+                        sizes: '384x384',
+                        type: 'image/png'
+                    },
+                    {
+                        src: 'https://media.discordapp.net/attachments/727389255139328143/886840254626160710/01zgghf1c4z31.png?width=512&height=512',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    },
+                ]
             });
 
             navigator.mediaSession.setActionHandler('play', function() {
