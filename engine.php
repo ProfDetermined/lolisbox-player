@@ -138,7 +138,7 @@ $lode = json_decode($local);
                 &nbsp;&nbsp;
             </span>
             <span id="volVal" class="btn btn-secondary">
-                Vol : X
+                Vol : 10
             </span>
             <span>
                 &nbsp;&nbsp;
