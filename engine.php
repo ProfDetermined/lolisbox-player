@@ -75,39 +75,39 @@ $lode = json_decode($local);
     <center>
         <div class="stat">
             <span id="playStat" class="btn btn-success">
-                playStat
+                Nothing Playing..
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
             <span class="btn btn-info">
                 <span id="curDur">
-                    curDur
+                    xx:xx
                 </span>
                 <span>
                     &nbsp;/&nbsp;
                 </span>
                 <span id="vidDur">
-                    vidDur
+                    xx:xx
                 </span>
             </span>
             <span class="space">
                 &nbsp;&nbsp;
             </span>
             <span id="loopStat" class="btn btn-warning">
-                Loop?
+                Loop : Off
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
             <span id="volVal" class="btn btn-secondary">
-                volValue
+                Vol : 0
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
             <span id="pip" class="btn btn-danger">
-                pip?
+                PiP : off
             </span>
         </div>
     </center>
