@@ -1,8 +1,8 @@
-const pl = document.getElementById("mplay");
-const plb = document.getElementById("play");
-const pab = document.getElementById("pause");
+const pl = document.getElementById("mplay")
+const plb = document.getElementById("play")
+const pab = document.getElementById("pause")
 
-const dur = document.getElementById("dur");
+const dur = document.getElementById("dur")
 
 const pStat = document.getElementById('playStat')
 const cDur = document.getElementById('curDur')
@@ -12,32 +12,32 @@ const vStat = document.getElementById('volVal')
 const pipS = document.getElementById('pip')
 
 function play() {
-    pl.play();
+    pl.play()
     pStat.innerHTML = "Play"
-    plb.classList.add("hidden");
-    pab.classList.remove("hidden");
+    plb.classList.add("hidden")
+    pab.classList.remove("hidden")
 }
 
 function pause() {
-    pl.pause();
+    pl.pause()
     pStat.innerHTML = "Pause"
-    plb.classList.remove("hidden");
-    pab.classList.add("hidden");
+    plb.classList.remove("hidden")
+    pab.classList.add("hidden")
 }
 
-pl.addEventListener("playing", play);
-pl.addEventListener("pause", pause);
+pl.addEventListener("playing", play)
+pl.addEventListener("pause", pause)
 
 function back() {
-    pl.currentTime = pl.currentTime - 5;
+    pl.currentTime = pl.currentTime - 5
 }
 
 function next() {
-    pl.currentTime = pl.currentTime + 5;
+    pl.currentTime = pl.currentTime + 5
 }
 
 pl.ontimeupdate = function () {
-    var percentage = (pl.currentTime / pl.duration) * 100;
+    var percentage = (pl.currentTime / pl.duration) * 100
     dur.value = percentage
 
     var i = setInterval(function () {
@@ -52,7 +52,7 @@ pl.ontimeupdate = function () {
 
             clearInterval(i)
         }
-    }, 200);
+    }, 200)
 
     var n = setInterval(function () {
         if (pl.readyState > 0) {
@@ -66,8 +66,8 @@ pl.ontimeupdate = function () {
 
             clearInterval(n)
         }
-    }, 200);
-};
+    }, 200)
+}
 
 function pvol() {
     pl.volume = pl.volume + 0.1
@@ -103,9 +103,9 @@ function unmute() {
 
 function pptoggle() {
     if (pl.paused == false) {
-        pl.pause();
+        pl.pause()
     } else if (pl.paused == true) {
-        pl.play();
+        pl.play()
     }
 }
 
