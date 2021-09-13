@@ -1,4 +1,7 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
+
 $home = "https://box.lolis.love/0/";
 
 $in = $_GET['id'];
@@ -122,7 +125,7 @@ $lode = json_decode($local);
             </div>
             <div class="col-md-2 col-sm-12" style="text-align: center;">
                 <?php 
-                    
+
                 ?>
                 <button id="back" onclick="back()">
                     <img src="content/svg/back.svg" alt="back">
