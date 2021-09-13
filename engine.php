@@ -7,15 +7,17 @@ $home = "https://box.lolis.love/0/";
 $in = $_GET['id'];
 
 // testing row
+echo "<script>console.log('".$in."')</script>";
+echo "<script>console.log('".substr($in,0, 25)."')</script>";
 echo "<script>console.log('".substr($in, 25)."')</script>";
 
 if (substr($in, 0, 19) == "https://lolis.love/") {
     $id = substr($in, 19);
     echo "<script>console.log('" . $id . "')</script>";
-} else if (substr($in, 0, 25) == "https://box.loli.love/") {
+} else if (substr($in, 0, 25) == "https://box.lolis.love/0/") {
     $id = substr($in, 25);
     echo "<script>console.log('" . $id . "')</script>";
-} else if (substr($in, 0, 26) == "https://file.lolis.love/") {
+} else if (substr($in, 0, 26) == "https://file.lolis.love/0/") {
     $id = substr($in, 26);
     echo "<script>console.log('" . $id . "')</script>";
 } else {
@@ -175,6 +177,12 @@ $lode = json_decode($local);
                         echo "<img src='content/svg/pipdis.svg' alt='pip'>";
                         echo "</button>";
                     } else if (substr($link, -3) == "mp4") {
+                        echo "<button id='pip-en' onclick='piptog()'>";
+                        echo "<img src='content/svg/pipen.svg' alt='pip'>";
+                        echo "</button>";
+                        echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
+                        echo "<img src='content/svg/pipdis.svg' alt='pip'>";
+                        echo "</button>";
                     }
                     ?>
                     <button id="back" onclick="back()">
