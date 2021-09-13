@@ -59,15 +59,13 @@ $lode = json_decode($local);
         echo "<source src = '" . $link . "' type='audio/mp3'>";
         echo "</audio>";
     } else if (substr($link, -13) == "videoplayback") {
-        echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
-        echo "<center style='padding: 1rem; padding-bottom: 0;'>";
+        echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
         echo "<video autoplay id='mplay' onclick='pptoggle()'>";
         echo "<source src='" . $link . "' type='video/mp4'>";
         echo "</video>";
         echo "</center>";
     } else if (substr($link, -3) == "mp4") {
-        echo "<script>document.getElementById('mcon').classList.add('hidden');</script>";
-        echo "<center style='padding: 1rem; padding-bottom: 0;'>";
+        echo "<center style='padding: 1rem; padding-bottom: 0; padding-top: 0;'>";
         echo "<video autoplay id='mplay' onclick='pptoggle()'>";
         echo "<source src='" . $link . "' type='video/mp4'>";
         echo "</video>";
@@ -76,37 +74,39 @@ $lode = json_decode($local);
     ?>
     <center>
         <div class="stat">
-            <span id="playstat">
+            <span id="playStat" class="btn btn-success">
                 playStat
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
-            <span id="curDur">
-                curDur
+            <span class="btn btn-info">
+                <span id="curDur">
+                    curDur
+                </span>
+                <span>
+                    &nbsp;/&nbsp;
+                </span>
+                <span id="vidDur">
+                    vidDur
+                </span>
+            </span>
+            <span class="space">
+                &nbsp;&nbsp;
+            </span>
+            <span id="loopStat" class="btn btn-warning">
+                Loop?
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
-            <span id="vidDur">
-                vidDur
-            </span>
-            <span>
-                &nbsp;&nbsp;
-            </span>
-            <span>
-                playS
-            </span>
-            <span>
-                &nbsp;&nbsp;
-            </span>
-            <span id="volVal">
+            <span id="volVal" class="btn btn-secondary">
                 volValue
             </span>
             <span>
                 &nbsp;&nbsp;
             </span>
-            <span id="pip">
+            <span id="pip" class="btn btn-danger">
                 pip?
             </span>
         </div>
