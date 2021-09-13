@@ -81,3 +81,11 @@ function piptog() {
         }
     }
 }
+
+const pStat = document.getElementById('playStat')
+const cDur = document.getElementById('curDur')
+const fDur = document.getElementById('vidDur')
+const lStat = document.getElementById('loopStat')
+const vStat = document.getElementById('volVal')
+const pipS = document.getElementById('pip')
+
