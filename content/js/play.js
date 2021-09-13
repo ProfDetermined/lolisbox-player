@@ -61,5 +61,9 @@ function pptoggle() {
 }
 
 function ltoggle() {
-    
+    if (pl.loop == true) {
+        pl.loop = false;
+    } else if (pl.loop == false) {
+        pl.loop = true;
+    }
 }
