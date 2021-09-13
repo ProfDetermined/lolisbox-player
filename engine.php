@@ -152,7 +152,7 @@ $lode = json_decode($local);
             </span>
         </div>
         <br>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row" style="top: 50%;">
                 <div class="col-lg-2 col-md-12 detailed" style="text-align: center;">
                     <a class="song-name" style="text-align: center;">
