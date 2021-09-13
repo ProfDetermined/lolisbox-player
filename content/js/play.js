@@ -4,14 +4,23 @@ const pab = document.getElementById("pause");
 
 const dur = document.getElementById("dur");
 
+const pStat = document.getElementById('playStat')
+const cDur = document.getElementById('curDur')
+const fDur = document.getElementById('vidDur')
+const lStat = document.getElementById('loopStat')
+const vStat = document.getElementById('volVal')
+const pipS = document.getElementById('pip')
+
 function play() {
     pl.play();
+    pStat.innerHTML = "Play"
     plb.classList.add("hidden");
     pab.classList.remove("hidden");
 }
 
 function pause() {
     pl.pause();
+    pStat.innerHTML = "Pause"
     plb.classList.remove("hidden");
     pab.classList.add("hidden");
 }
@@ -30,26 +39,58 @@ function next() {
 pl.ontimeupdate = function () {
     var percentage = (pl.currentTime / pl.duration) * 100;
     dur.value = percentage
+
+    var i = setInterval(function () {
+        if (pl.readyState > 0) {
+            var fmin = parseInt(pl.duration / 60, 10)
+            var fsec = parseInt(pl.duration % 60, 10)
+            if (fsec < 10) {
+                seconds = "0"+seconds
+            }
+
+            fDur.innerHTML = fmin + ":" + fsec
+
+            clearInterval(i)
+        }
+    }, 200);
+
+    var n = setInterval(function () {
+        if (pl.readyState > 0) {
+            var cmin = parseInt(pl.currentTime / 60, 10)
+            var csec = parseInt(pl.currentTime % 60, 10)
+            if (csec < 10) {
+                csec = "0" + csec
+            }
+
+            cDur.innerHTML = cmin + ":" + csec
+
+            clearInterval(n)
+        }
+    }, 200);
 };
 
 function pvol() {
-    pl.volume = pl.volume + 0.1;
+    pl.volume = pl.volume + 0.1
+    vStat.innerHTML = "Vol : " + pl.volume
 }
 
 function dvol() {
-    pl.volume = pl.volume - 0.1;
+    pl.volume = pl.volume - 0.1
+    vStat.innerHTML = "Vol : " + pl.volume
 }
 
 function mute() {
-    pl.muted = true;
-    document.getElementById("mute").classList.add("hidden");
-    document.getElementById("unmute").classList.remove("hidden");
+    pl.muted = true
+    vStat.innerHTML = "Vol : " + pl.volume
+    document.getElementById("mute").classList.add("hidden")
+    document.getElementById("unmute").classList.remove("hidden")
 }
 
 function unmute() {
-    pl.muted = false;
-    document.getElementById("unmute").classList.add("hidden");
-    document.getElementById("mute").classList.remove("hidden");
+    pl.muted = false
+    vStat.innerHTML = "Vol : " + pl.volume
+    document.getElementById("unmute").classList.add("hidden")
+    document.getElementById("mute").classList.remove("hidden")
 }
 
 function pptoggle() {
@@ -62,13 +103,15 @@ function pptoggle() {
 
 function ltoggle() {
     if (pl.loop == true) {
-        pl.loop = false;
-        document.getElementById("loop").classList.add("hidden");
-        document.getElementById("unloop").classList.remove("hidden");
+        pl.loop = false
+        lStat.innerHTML = "Loop : Off"
+        document.getElementById("loop").classList.add("hidden")
+        document.getElementById("unloop").classList.remove("hidden")
     } else if (pl.loop == false) {
-        pl.loop = true;
-        document.getElementById("loop").classList.remove("hidden");
-        document.getElementById("unloop").classList.add("hidden");
+        pl.loop = true
+        lStat.innerHTML = "Loop : On"
+        document.getElementById("loop").classList.remove("hidden")
+        document.getElementById("unloop").classList.add("hidden")
     }
 }
 
@@ -81,11 +124,3 @@ function piptog() {
         }
     }
 }
-
-const pStat = document.getElementById('playStat')
-const cDur = document.getElementById('curDur')
-const fDur = document.getElementById('vidDur')
-const lStat = document.getElementById('loopStat')
-const vStat = document.getElementById('volVal')
-const pipS = document.getElementById('pip')
-
