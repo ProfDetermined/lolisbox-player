@@ -108,7 +108,7 @@ $lode = json_decode($local);
             <br><br><br><br>
         </center>
     </div>
-    
+
     <div class="fixed_ft">
         <div class="stat">
             <span id="playStat" class="btn btn-success">
@@ -138,7 +138,7 @@ $lode = json_decode($local);
                 &nbsp;&nbsp;
             </span>
             <span id="volVal" class="btn btn-secondary">
-                Vol : 0
+                Vol : X
             </span>
             <span>
                 &nbsp;&nbsp;
