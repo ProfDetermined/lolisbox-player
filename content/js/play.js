@@ -54,3 +54,11 @@ function unmute() {
     document.getElementById("unmute").classList.add("hidden");
     document.getElementById("mute").classList.remove("hidden");
 }
+
+function pptoggle() {
+    if (pl.paused == false) {
+        pl.pause();
+    } else if (pl.paused == true) {
+        pl.play();
+    }
+}
