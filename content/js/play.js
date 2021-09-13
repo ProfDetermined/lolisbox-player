@@ -1,11 +1,8 @@
 const pl = document.getElementById("mplay");
 const plb = document.getElementById("play");
 const pab = document.getElementById("pause");
-const nxt = document.getElementById("next");
-const prv = document.getElementById("back");
 
 const dur = document.getElementById("dur");
-const vol = document.getElementById("vol")
 
 function play() {
     pl.play();
