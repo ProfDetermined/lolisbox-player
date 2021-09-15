@@ -224,6 +224,7 @@ $lode = json_decode($local);
                     <button id="vol-d" onclick="pvol()">
                         <img src="content/svg/volumeu.svg" alt="volu">
                     </button>
+                    <i>&nbsp;&nbsp;</i>
                     <?php
                     if (substr($link, -3) == "wav") {
                         echo "<button id='no-pip'>";
