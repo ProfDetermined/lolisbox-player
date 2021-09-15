@@ -161,29 +161,29 @@ $lode = json_decode($local);
                 </div>
                 <div class="col-lg-3 col-md-12" style="text-align: center;">
                     <?php
-                    // if (substr($link, -3) == "wav") {
-                    //     echo "<button id='no-pip'>";
-                    //     echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -3) == "mp3") {
-                    //     echo "<button id='no-pip'>";
-                    //     echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -13) == "videoplayback") {
-                    //     echo "<button id='pip-en' onclick='piptog()'>";
-                    //     echo "<img src='content/svg/pipen.svg' alt='pip'>";
-                    //     echo "</button>";
-                    //     echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
-                    //     echo "<img src='content/svg/pipdis.svg' alt='pip'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -3) == "mp4") {
-                    //     echo "<button id='pip-en' onclick='piptog()'>";
-                    //     echo "<img src='content/svg/pipen.svg' alt='pip'>";
-                    //     echo "</button>";
-                    //     echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
-                    //     echo "<img src='content/svg/pipdis.svg' alt='pip'>";
-                    //     echo "</button>";
-                    // }
+                        if (substr($call['fileMeta']['contentType'], 5) == "audio") {
+                            echo "<button id='no-pip'>";
+                            echo "<img src='content/svg/pipdis.svg' alt='no-pip'>";
+                            echo "</button>";
+                        } else if (substr($call['fileMeta']['contentType'], 5) == "video") {
+                            echo "<button id='pip-en' onclick='piptog()'>";
+                            echo "<img src='content/svg/pipen.svg' alt='pip'>";
+                            echo "</button>";
+                            echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
+                            echo "<img src='content/svg/pipdis.svg' alt='pip'>";
+                            echo "</button>";
+                        } else if (substr($call['fileMeta']['contentType'], 5) == null) {
+                            if (substr($link, -13) == "videoplayback") {
+                            echo "<button id='pip-en' onclick='piptog()'>";
+                            echo "<img src='content/svg/pipen.svg' alt='pip'>";
+                            echo "</button>";
+                            echo "<button id='pip-dis' onclick='piptog()' class='hidden'>";
+                            echo "<img src='content/svg/pipdis.svg' alt='pip'>";
+                            echo "</button>";
+                            } else {
+                                echo "error";
+                            }
+                        }
                     ?>
                     <button id="back" onclick="back()">
                         <img src="content/svg/back.svg" alt="back">
@@ -224,23 +224,41 @@ $lode = json_decode($local);
                     </button>
                     <i>&nbsp;&nbsp;</i>
                     <?php
-                    // if (substr($link, -3) == "wav") {
-                    //     echo "<button id='no-pip'>";
-                    //     echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -3) == "mp3") {
-                    //     echo "<button id='no-pip'>";
-                    //     echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -13) == "videoplayback") {
-                    //     echo "<button id='pip-en' onclick='fscreen()'>";
-                    //     echo "<img src='content/svg/fullen.svg' alt='fs'>";
-                    //     echo "</button>";
-                    // } else if (substr($link, -3) == "mp4") {
-                    //     echo "<button id='pip-en' onclick='fscreen()'>";
-                    //     echo "<img src='content/svg/fullen.svg' alt='fs'>";
-                    //     echo "</button>";
-                    // }
+                        // if (substr($link, -3) == "wav") {
+                        //     echo "<button id='no-pip'>";
+                        //     echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
+                        //     echo "</button>";
+                        // } else if (substr($link, -3) == "mp3") {
+                        //     echo "<button id='no-pip'>";
+                        //     echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
+                        //     echo "</button>";
+                        // } else if (substr($link, -13) == "videoplayback") {
+                        //     echo "<button id='pip-en' onclick='fscreen()'>";
+                        //     echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                        //     echo "</button>";
+                        // } else if (substr($link, -3) == "mp4") {
+                        //     echo "<button id='pip-en' onclick='fscreen()'>";
+                        //     echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                        //     echo "</button>";
+                        // }
+
+                        if (substr($call['fileMeta']['contentType'], 5) == "audio") {
+                            echo "<button id='no-pip'>";
+                            echo "<img src='content/svg/fulldis.svg' alt='no-fs'>";
+                            echo "</button>";
+                        } else if (substr($call['fileMeta']['contentType'], 5) == "video") {
+                            echo "<button id='pip-en' onclick='fscreen()'>";
+                            echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                            echo "</button>";
+                        } else if (substr($call['fileMeta']['contentType'], 5) == null) {
+                            if (substr($link, -13) == "videoplayback") {
+                                echo "<button id='pip-en' onclick='fscreen()'>";
+                                echo "<img src='content/svg/fullen.svg' alt='fs'>";
+                                echo "</button>";
+                            } else {
+                                echo "error";
+                            }
+                        }
                     ?>
                 </div>
             </div>
